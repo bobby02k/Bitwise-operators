@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 
 /*
@@ -8,7 +7,7 @@ binary digits of an integer number n
 using bitwise operator AND '&'
 */
 void binary(int n, int bits = 32){
-    unsigned int mask = pow(2,bits-1);
+    unsigned int mask = 1 << bits-1;
     for(int i = bits-1; i >= 0; i--){
         if((i+1) % 4 == 0)cout << " ";
         bool bit = mask & n;
