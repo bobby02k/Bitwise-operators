@@ -6,7 +6,7 @@ function 'binary' that reads
 binary digits of an integer number n
 using bitwise operator AND '&'
 */
-void binary(int n, int bits = 32){
+void binary(int n, int bits = sizeof(int)*8){
     unsigned int mask = 1 << bits-1;
     for(int i = bits-1; i >= 0; i--){
         if((i+1) % 4 == 0)cout << " ";
@@ -21,7 +21,7 @@ int main(){
 
     int n = 64;
     binary(n);
-    binary((n>>1));
+    binary(~n);
 
     return 0;
 }
